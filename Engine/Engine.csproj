@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{51D0C671-6140-48F1-A0F4-F82367785887}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Engine</RootNamespace>
+    <AssemblyName>Engine</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Castle.Windsor, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Windsor.3.2.0\lib\net45\Castle.Windsor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fbiz.Framework.Business.v2.0, Version=2.0.4.1, Culture=neutral, PublicKeyToken=4da387c7938b1245, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fbiz.Framework.Business.2.0.4.1\lib\net40\Fbiz.Framework.Business.v2.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fbiz.Framework.Core.v2.0, Version=2.0.4.1, Culture=neutral, PublicKeyToken=4da387c7938b1245, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fbiz.Framework.Core.2.0.4.1\lib\net40\Fbiz.Framework.Core.v2.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Fbiz.Framework.DataAccess.v2.0, Version=2.0.4.1, Culture=neutral, PublicKeyToken=4da387c7938b1245, processorArchitecture=MSIL">
+      <HintPath>..\packages\Fbiz.Framework.DataAccess.2.0.4.1\lib\net40\Fbiz.Framework.DataAccess.v2.0.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=2.1.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.2.1.0\lib\net45\NLog.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmailJaCadastradoException.cs" />
+    <Compile Include="CPFJaCadastradoException.cs" />
+    <Compile Include="Helper\AutomaticDecompression.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Implementation\CompartilhamentoEngine.cs" />
+    <Compile Include="Implementation\RespostasEngine.cs" />
+    <Compile Include="Implementation\PontuacaoEngine.cs" />
+    <Compile Include="Implementation\PontosEngine.cs" />
+    <Compile Include="Implementation\PerguntasEngine.cs" />
+    <Compile Include="Implementation\QuizEngine.cs" />
+    <Compile Include="Implementation\RecrutamentoEngine.cs" />
+    <Compile Include="Implementation\TokenEngine.cs" />
+    <Compile Include="Implementation\UsuarioEngine.cs" />
+    <Compile Include="Installer\EngineInstaller.cs" />
+    <Compile Include="Interface\ICompartilhamentoEngine.cs" />
+    <Compile Include="Interface\IRespostasEngine.cs" />
+    <Compile Include="Interface\IPerguntasEngine.cs" />
+    <Compile Include="Interface\IRecrutamentoEngine.cs" />
+    <Compile Include="Interface\IPontuacaoEngine.cs" />
+    <Compile Include="Interface\IPontosEngine.cs" />
+    <Compile Include="Interface\IQuizEngine.cs" />
+    <Compile Include="Interface\ITokenEngine.cs" />
+    <Compile Include="Interface\IUsuarioEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Business\Business.csproj">
+      <Project>{6da44a03-490e-49c9-bf35-e5cc328780fc}</Project>
+      <Name>Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{3a06effd-0779-4415-9dfe-7446a8b84309}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

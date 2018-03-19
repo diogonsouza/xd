@@ -1,0 +1,29 @@
+{
+  "name": "Hyojun.bootstrap-template",
+  "description": "ASP.NET MVC bootstrap",
+  "version": "3.6.0",
+  "authors": [
+    "Tecnologia F.biz <tecnologia@fbiz.com.br>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "almond": "https://github.com/fbiz/almond.git#~0.3",
+    "bourbon": "https://github.com/fbiz/bourbon.git#~4.0",
+    "gs": "8d2e4648096d3fe45e0753d03ac7afca99682843",
+    "Hyojun.Guideline": "https://bitbucket.org/fbiz/hyojun.guideline.git#63abe759378c1bb2bee5c1ca6bff9116e5dfabca",
+    "normalize-scss": "~3.0.1",
+    "zepto": "https://github.com/fbiz/zepto.git#~1.1"
+  },
+  "resolutions": {
+    "bourbon": "~3.2.1",
+    "gs": "8d2e4648096d3fe45e0753d03ac7afca99682843"
+  }
+}

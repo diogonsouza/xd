@@ -1,0 +1,76 @@
+﻿@using PagedList
+@using PagedList.Mvc
+
+@helper ValidationSummary(FluentValidation.Results.ValidationResult validationResult)
+{
+    if (validationResult != null && !validationResult.IsValid)
+    {
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="col-lg-offset-4 col-lg-4">
+                    <div class="panel panel-danger">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-md-10">Erros de validação</div>
+                                <div class="col-md-2 text-center"><span class="label label-warning">@validationResult.Errors.Count</span></div>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                @foreach (var error in validationResult.Errors)
+                                {
+                                    <li>@error.PropertyName: @error.ErrorMessage</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+@helper Feedback(dynamic viewbag)
+{
+    if (viewbag != null && viewbag.Feedback != null)
+    {
+        var feedback = (Admin.ViewModels.FeedbackViewModel)(viewbag.Feedback);
+        <div class="alert alert-@feedback.Kind">
+            <strong>Sucesso!</strong> @feedback.Message
+        </div>
+    }
+}
+
+@helper Pager(System.Web.Mvc.HtmlHelper Html, System.Web.Mvc.UrlHelper Url, IPagedList Model)
+{
+    @Html.PagedListPager(Model,
+                                (page) => Url.Action("Index", new { pageNumber = page }),
+                                                new PagedListRenderOptions()
+                                                {
+                                                    ContainerDivClasses = new string[] { "dataTables_paginate" },
+                                                    UlElementClasses = new[] { "pagination", "alternate" },
+                                                    LinkToPreviousPageFormat = "← Anterior",
+                                                    LinkToNextPageFormat = "Próxima →"
+                                                })
+
+}
+
+@helper Pager(System.Web.Mvc.HtmlHelper Html, Func<int, string> generatePageUrl, IPagedList Model)
+{
+    @Html.PagedListPager(Model,
+                                generatePageUrl,
+                                                new PagedListRenderOptions()
+                                                {
+                                                    ContainerDivClasses = new string[] { "dataTables_paginate" },
+                                                    UlElementClasses = new[] { "pagination", "alternate" },
+                                                    LinkToPreviousPageFormat = "← Anterior",
+                                                    LinkToNextPageFormat = "Próxima →"
+                                                })
+
+}
+
+@helper Boolean(bool value)
+{
+    var badgeClass = value ? "badge-success" : "badge-danger";
+    <span class="badge @badgeClass">@(value ? "Sim" : "Não")</span>
+}

@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<Page URL="/">
+  <Title>Admin</Title>
+	<H1>Admin</H1>
+	<Description>Admin</Description>
+	<Keywords></Keywords>
+	<Sitemap>
+		<changefreq>monthly</changefreq>
+		<priority>2</priority>
+	</Sitemap>
+
+	<Page URL="Login/">
+		<Title>Admin - Login</Title>
+	</Page>
+
+</Page>

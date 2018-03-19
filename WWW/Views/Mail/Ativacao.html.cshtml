@@ -1,0 +1,144 @@
+﻿@model WWW.ViewModels.Response.EmailEnviadoViewModel
+@{
+    Layout = null;
+    var linkValidacao = string.Format("{0}://{1}/validacao?token={2}", Request.Url.Scheme, (HttpContext.Current.Request.Url.Host + HttpContext.Current.Request.ApplicationPath), @Model.Token);
+    var assetsPath = string.Format("{0}://{1}/assets/img/activationmail", Request.Url.Scheme, (HttpContext.Current.Request.Url.Host + HttpContext.Current.Request.ApplicationPath));
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+
+</head>
+<body class="outlook" style="margin: 0; padding: 0; background-color: #FFFFFF; width: 100%;">
+
+
+    <table id="backgroundTable" class="banco" cellpadding="0" cellspacing="0" border="0" width="100%" style="border-collapse: collapse; margin: 0; padding: 0; background-color: #FFFFFF; width: 100%; line-height: 100%; font-family: Arial, sans;" bgcolor="#FFFFFF">
+        <tr>
+            <td height="15" style="border-collapse: collapse; font-size: 15px; line-height: 15px; font-family: Arial, sans;" align="left">&nbsp;</td>
+        </tr>
+        <tr>
+            <td align="center" style="border-collapse: collapse; font-family: Arial, sans;">
+                <table bgcolor="#000000" id="wrapper" cellpadding="0" cellspacing="0" border="0" style="border-collapse: collapse; background-color: #000000; width: 600px; font-family: Arial, sans;" width="600">
+                    <tr>
+                        <td width="600" height="320" align="left" style="border-collapse: collapse; font-family: Arial, sans;">
+                            <div style="height:320px;">
+                                <img width="600" height="320" src="@assetsPath/dest.jpg" alt="XDEX" title="XDEX" style="text-decoration: none; display: block;" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="600" align="center" style="border-collapse: collapse; font-family: Arial, sans;">
+                            <table width="500" border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; font-family: Arial, sans;">
+                                <tr>
+                                    <td width="100%" class="content-title" align="center" style="border-collapse: collapse; font-size: 36px; color: #b4aaa4; line-height: 22px; font-family: Arial, sans;">
+                                        <b>Ol&aacute;, <span class="content-name" style="font-size: 36px; color: #11d377; line-height: 22px;">@Model.Nome</span>!</b>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="36" style="border-collapse: collapse; line-height: 36px; font-size: 36px; height: 36px; font-family: Arial, sans;">
+                                        <font style="line-height: 36px; font-size: 36px; height: 36px; font-family: Arial, sans;">&nbsp;</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" class="content-subtitle" align="center" style="border-collapse: collapse; font-size: 16px; color: #b4aaa4; line-height: 22px; font-family: Arial, sans;">
+                                        FALTA POUCO PARA FINALIZAR<br />
+                                        A SUA INSCRI&Ccedil;&Atilde;O.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="36" style="border-collapse: collapse; line-height: 36px; font-size: 36px; height: 36px; font-family: Arial, sans;">
+                                        <font style="line-height: 36px; font-size: 36px; height: 36px; font-family: Arial, sans;">&nbsp;</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" class="content-text" align="center" style="border-collapse: collapse; font-size: 14px; color: #b4aaa4; line-height: 18px; font-family: Arial, sans;">
+                                        <b>Valide o cadastro</b> clicando no bot&atilde;o abaixo e confirme<br />
+                                        o seu e-mail. Aproveite tamb&eacute;m para conferir o seu<br />
+                                        lugar na nossa lista.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" height="85" style="border-collapse: collapse; line-height: 85px; font-size: 85px; height: 85px; font-family: Arial, sans;">
+                                        <font style="line-height: 85px; font-size: 85px; height: 85px; font-family: Arial, sans;">&nbsp;</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="100%" align="center" style="border-collapse: collapse; font-family: Arial, sans;">
+                                        <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; font-family: Arial, sans;">
+                                            <tr>
+                                                <td width="231" height="52" style="border-collapse: collapse; font-family: Arial, sans;">
+                                                    <div style="height: 52px;">
+                                                        <a href="@linkValidacao" target="_blank" style="color: #2A5DB0; text-decoration: none;">
+                                                            <img style="text-decoration: none; display: block; border: none; min-width: 231px;" width="231" height="52" src="@assetsPath/cta.jpg" alt="Confirmar e-mail" title="Confirmar e-mail" />
+                                                        </a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="38" style="border-collapse: collapse; line-height: 38px; font-size: 38px; height: 38px; font-family: Arial, sans;">
+                            <font style="line-height: 38px; font-size: 38px; height: 38px; font-family: Arial, sans;">&nbsp;</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="600" height="238" align="left" style="border-collapse: collapse; font-family: Arial, sans;">
+                            <div style="height:238px;">
+                                <img width="600" height="238" src="@assetsPath/foot.jpg" alt="" title="" style="text-decoration: none; display: block;" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="600" align="center" style="border-collapse: collapse; font-family: Arial, sans;">
+                            <table border="0" cellspacing="0" cellpadding="0" style="border-collapse: collapse; font-family: Arial, sans;">
+                                <tr>
+                                    <td width="500" class="copyright-text" align="center" style="border-collapse: collapse; font-size: 12px; color: #b4aaa4; line-height: 14px; font-family: Arial, sans;">
+                                        COPYRIGHT XDEX.<br />
+                                        TODOS OS DIREITOS RESERVADOS
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30" style="border-collapse: collapse; line-height: 30px; font-size: 30px; height: 30px; font-family: Arial, sans;">
+                            <font style="line-height: 30px; font-size: 30px; height: 30px; font-family: Arial, sans;">&nbsp;</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="600" align="center" style="border-collapse: collapse; font-family: Arial, sans;">
+                            <table border="0" cellspacing="0" cellpadding="0" width="490" style="border-collapse: collapse; font-family: Arial, sans;">
+                                <tr>
+                                    <td height="15" style="border-collapse: collapse; line-height: 15px; font-size: 15px; height: 15px; font-family: Arial, sans;" align="left">
+                                        <font style="line-height: 15px; font-size: 15px; height: 15px; font-family: Arial, sans;">&nbsp;</font>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="disclaimer" align="justify" style="border-collapse: collapse; color: #414746; font-size: 12px; text-align: justify; line-height: 17px; font-family: 'Helvetica Neue', Helvetica, Arial, sans;">
+                                        Este e-mail tem car&aacute;ter meramente informativo; por isso, n&atilde;o constitui nem deve ser interpretado como uma solicita&ccedil;&atilde;o de compra, venda, oferta ou ado&ccedil;&atilde;o de estrat&eacute;gias por parte dos destinat&aacute;rios. A inser&ccedil;&atilde;o de informa&ccedil;&otilde;es pessoais na p&aacute;gina de lan&ccedil;amento da XDEX Intermedia&ccedil;&atilde;o Ltda. e a posterior conﬁrma&ccedil;&atilde;o por e-mail n&atilde;o garantem o cadastro ou acesso do usu&aacute;rio &agrave; plataforma da XDEX. Mesmo ap&oacute;s a inser&ccedil;&atilde;o das informa&ccedil;&otilde;es na p&aacute;gina de lan&ccedil;amento, o usu&aacute;rio ter&aacute; que se submeter, em momento oportuno, ao procedimento de cadastro para a abertura de conta na plataforma. O cadastro na p&aacute;gina de lan&ccedil;amento garante apenas que o usu&aacute;rio ter&aacute; acesso a uma lista preferencial para efetivar o cadastro futuro para a abertura de conta na plataforma XDEX. A lista ser&aacute; elaborada de acordo com a ordem cronol&oacute;gica de cadastramento na p&aacute;gina de lan&ccedil;amento. Os usu&aacute;rios ser&atilde;o convocados exclusivamente por e-mail para a efetiva&ccedil;&atilde;o do cadastro para a abertura de conta na plataforma. Com exce&ccedil;&atilde;o do e-mail, nenhum outro meio de comunica&ccedil;&atilde;o ser&aacute; utilizado para tal convoca&ccedil;&atilde;o. O usu&aacute;rio que indicar um amigo para fazer o cadastro na p&aacute;gina de lan&ccedil;amento da XDEX &ndash; e se esse amigo efetivar o cadastramento &ndash; conseguir&aacute; pular XX lugares na ﬁla. Ap&oacute;s o cadastro na p&aacute;gina de lan&ccedil;amento, o usu&aacute;rio receber&aacute; um question&aacute;rio (quiz) com perguntas gerais, sendo que aqueles que responderem ao question&aacute;rio em sua totalidade conseguir&atilde;o pular XX lugares na lista. Os ativos digitais negociados na XDEX n&atilde;o s&atilde;o valores mobili&aacute;rios regulados pela Comiss&atilde;o de Valores Mobili&aacute;rios (CVM) nem t&iacute;tulos emitidos ou chancelados por qualquer governo, autoridade central ou autoridade monet&aacute;ria, incluindo o Banco Central do Brasil, mas n&atilde;o se limitando a este. O usu&aacute;rio est&aacute; ciente de que os ativos digitais n&atilde;o possuem qualquer garantia: (a) do Fundo Garantidor de Cr&eacute;dito (FGC); (b) de convers&atilde;o para moedas oﬁciais, como o real, o d&oacute;lar ou outros ativos digitais/criptomoedas; e (c) de exist&ecirc;ncia de lastreamento em ativos de qualquer esp&eacute;cie, responsabilizando-se o usu&aacute;rio pelos riscos inerentes &agrave; compra de ativos digitais. O usu&aacute;rio deve se certiﬁcar dos riscos da opera&ccedil;&atilde;o antes de execut&aacute;-la, posto que os ativos digitais/criptomoedas apresentam grande volatilidade em rela&ccedil;&atilde;o ao seu pre&ccedil;o, e o seu investimento &eacute; sempre de alto risco, existindo a possibilidade de perda de todo o capital investido em um curto espa&ccedil;o de tempo. As informa&ccedil;&otilde;es deste material s&atilde;o v&aacute;lidas na data da sua publica&ccedil;&atilde;o. Qualquer informa&ccedil;&atilde;o contemplada deve ser conﬁrmada quanto &agrave;s suas condi&ccedil;&otilde;es antes da conclus&atilde;o de qualquer neg&oacute;cio. A XDEX n&atilde;o se responsabiliza por decis&otilde;es de investimentos que venham a ser tomadas com base nas informa&ccedil;&otilde;es divulgadas e se exime de qualquer responsabilidade por quaisquer preju&iacute;zos, diretos ou indiretos, decorrentes da utiliza&ccedil;&atilde;o deste material ou do seu conte&uacute;do. A valoriza&ccedil;&atilde;o passada n&atilde;o &eacute; garantia de valoriza&ccedil;&atilde;o futura. A eventual valoriza&ccedil;&atilde;o dos ativos digitais/criptomoedas n&atilde;o garante a sua valoriza&ccedil;&atilde;o futura. As transa&ccedil;&otilde;es com ativos digitais/criptomoedas podem gerar perdas ﬁnanceiras em raz&atilde;o da sua pr&oacute;pria natureza e da poss&iacute;vel oscila&ccedil;&atilde;o do seu pre&ccedil;o, o qual, inclusive, pode chegar a &ldquo;zero&rdquo;, sendo que o usu&aacute;rio pode perder todo o capital investido. A XDEX, na qualidade de mera intermedi&aacute;ria, n&atilde;o tem qualquer controle sobre o pre&ccedil;o dos ativos digitais ou responsabilidade por eventuais preju&iacute;zos sofridos pelo usu&aacute;rio devido &agrave; desvaloriza&ccedil;&atilde;o dos ativos digitais/criptomoedas. O usu&aacute;rio &eacute; o &uacute;nico respons&aacute;vel pela seguran&ccedil;a e pelo controle dos seus ativos digitais e por todos e quaisquer c&oacute;digos/senhas/informa&ccedil;&otilde;es necess&aacute;rios para acessar a sua conta na plataforma XDEX e transacionar ativos digitais/criptomoeadas, solicitar resgates e efetuar transfer&ecirc;ncias, bem como realizar qualquer outra atividade dispon&iacute;vel na plataforma XDEX. N&atilde;o s&atilde;o permitidos dep&oacute;sitos, resgates e/ou transfer&ecirc;ncias de ativos digitais/criptomoedas de e para uma carteira virtual (carteira virtual ou e-wallet) por meio da plataforma XDEX. Antes de investir, consulte todos os servi&ccedil;os dispon&iacute;veis em: <a href="http://www.xdex.com.br/termos-uso" target="_blank" style="color: #11d377; text-decoration: none;">www.xdex.com.br/termos-uso</a>. A XDEX n&atilde;o possui qualquer obriga&ccedil;&atilde;o de criar meios para que os usu&aacute;rios da plataforma XDEX recebam ativos digitais/criptomoedas em adi&ccedil;&atilde;o aos ativos digitais/criptomoedas originalmente detidos ou convertam os seus ativos digitais/criptomoedas em outro devido ao fato de serem titulares de certo ativo digital/criptomoedas em caso de evento na rede (blockchain) que implique mudan&ccedil;as no c&oacute;digo de alimenta&ccedil;&atilde;o dos ativos digitais/criptomoedas, tais como Forks e Air Drops, mas n&atilde;o se limitando a estes.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td height="80" style="border-collapse: collapse; line-height: 80px; font-size: 80px; height: 80px; font-family: Arial, sans;" align="left">
+                                        <font style="line-height: 80px; font-size: 80px; height: 80px; font-family: Arial, sans;">&nbsp;</font>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td height="15" style="border-collapse: collapse; font-size: 15px; line-height: 15px; font-family: Arial, sans;" align="left">&nbsp;</td>
+        </tr>
+    </table>
+</body>
+</html>

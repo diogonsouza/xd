@@ -1,0 +1,35 @@
+﻿<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element text-center">
+                    <span>
+                        <img alt="image" class="img-circle" src="~/Images/profile_small.jpg" />
+                    </span>
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <span class="clear">
+                            <span class="block m-t-xs">
+                                <strong class="font-bold">@Operador.Nome <b class="caret"></b></strong>
+                            </span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                        <li><a href="@Url.Action("Logout", "Login")">Logout</a></li>
+                    </ul>
+                </div>
+                <div class="logo-element"></div>
+            </li>
+
+            <li class="@Html.IsSelected(controller: "Operador")">
+                <a href="@Url.Action("Index", "Operador")"><i class="fa fa-user"></i> <span class="nav-label">Operadores</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Ranking")">
+                <a href="@Url.Action("Index", "Ranking")"><i class="fa fa-sort-numeric-asc"></i> <span class="nav-label">Ranking</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Recrutamento")">
+                <a href="@Url.Action("Index", "Recrutamento")"><i class="fa fa-arrow-circle-down"></i> <span class="nav-label">Recrutamento</span></a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

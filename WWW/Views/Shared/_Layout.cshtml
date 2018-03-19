@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@Seo.Title</title>
+    @*<link rel="shortcut icon" href="@Url.Content("~/Images/favicon.ico")" />*@
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+
+    @if (IsSectionDefined("Styles"))
+    {
+        @RenderSection("Styles", required: false)
+    }
+
+
+    @Styles.Render("~/font-awesome/css")
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <div id="wrapper" class="@Html.PageClass()">
+        @Html.Partial("Modules/Navigation")
+        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+            @Html.Partial("Modules/TopNavbar")
+            @RenderBody()
+            @Html.Partial("Modules/Footer")
+        </div>
+        @Html.Partial("Modules/RightSidebar")
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/plugins/slimScroll")
+    @Scripts.Render("~/bundles/inspinia")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+@*
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>@Seo.Title</title>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="shortcut icon" href="@Url.Content("favicon.ico")" />
+
+            @(Minify.Add("bootstrap.min.css")
+                    .Add("jquery-ui.css")
+                    .Add("font-awesome.css")
+                    .Add("fullcalendar.css")
+                    .Add("colorpicker.css")
+                    .Add("datepicker.css")
+                    .Add("icheck/flat/blue.css")
+                    .Add("select2.css")
+                    .Add("jquery.jscrollpane.css")
+                    .Add("unicorn.css")
+                    .Add("unicorn.grey.css"))
+
+            @RenderSection("CustomHeader", required: false)
+
+            @Minify.Write()
+
+            @Minify.Add("unicorn.grey.css").Write(new { @class = "skin-color" })
+
+            <script type="text/javascript">
+                var Common = { Util: { Root: '@Config.Root', AssetsRoot: '@Config.AssetsRoot', FullURL: '@Config.FullRoot'} };
+            </script>
+        </head>
+
+
+        <body>
+            <div id="header">
+                <h1><a href="@Url.Action("Index", "Home")">Home</a></h1>
+            </div>
+
+            <div id="user-nav">
+                <ul class="btn-group">
+                    <li class="btn" ><a title="" href="#"><i class="icon-user"></i> <span class="text">@User.Identity.Name</span></a></li>
+                    <li class="btn"><a title="" href="@Url.Logout()"><i class="icon-share-alt"></i> <span class="text">Logout</span></a></li>
+                </ul>
+            </div>
+
+            <div id="sidebar">
+                @Html.Partial("Modules/Sidebar")
+            </div>
+
+            <div id="content">
+                @RenderSection("ContentHeader", false)
+                <div class="container-fluid">
+                    @RenderBody()
+                </div>
+            </div>
+
+            @(Minify.Add("lib/excanvas.min.js")
+                    .Add("lib/jquery.js")
+                    .Add("lib/jquery-ui.custom.js")
+                    .Add("lib/bootstrap.min.js")
+                    .Add("lib/bootstrap-colorpicker.js")
+                    .Add("lib/bootstrap-datepicker.js")
+                    .Add("lib/jquery.jpanelmenu.min.js")
+                    .Add("lib/jquery.nicescroll.min.js")
+                    .Add("lib/jquery.icheck.min.js")
+                    .Add("lib/select2.min.js")
+                    .Add("lib/jquery.dataTables.min.js")
+                    .Add("lib/jquery.flot.min.js")
+                    .Add("lib/jquery.flot.resize.min.js")
+                    .Add("lib/jquery.flot.pie.min.js")
+                    .Add("lib/jquery.validate.js")
+                    .Add("lib/jquery.sparkline.min.js")
+                    .Add("lib/bootbox.min.js")
+                    .Add("lib/unicorn.js")
+                    .Add("lib/unicorn.jui.js")
+                    .Add("lib/unicorn.tables.js")
+                    .Add("lib/jquery.gritter.js")
+                    .Add("lib/unicorn.interface.js")
+                    .Add("lib/unicorn.login.js")
+                    .Add("lib/unicorn.form_common.js")
+                    .Add("lib/unicorn.form_validation.js")
+                    .Add("lib/fullcalendar.min.js"))
+
+
+            @RenderSection("Scripts", required: false)
+
+            @Minify.Write()
+
+            @RenderSection("Footer", required: false)
+
+
+        </body>
+    </html>
+*@

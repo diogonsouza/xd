@@ -1,0 +1,63 @@
+﻿@model RecuperacaoSenhaEditViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>@Seo.Title</title>
+    <link rel="shortcut icon" href="@Url.Content("favicon.ico")" />
+
+    @Styles.Render("~/font-awesome/css")
+    @Styles.Render("~/Content/css")
+</head>
+
+<body class="fc-bg">
+    <div class="middle-box text-center loginscreen">
+        <div>
+            <h1><img src="@(Config.Root)Images/logo.png" alt="WPP Company" /></h1>
+        </div>
+
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <p>Atualização de Senha do Operador:</p>
+            </div>
+            <div class="ibox-content">
+                <form id="recoverform" class="form-vertical" action="@Url.Action("Index", "RecuperacaoSenha")" method="post" autocomplete="off">
+                    <input type="hidden" name="viewModel.OperadorId" value="@Model.OperadorId" />
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Senha" name="viewModel.Senha" required="" value="@Model.Senha">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Confirmação Senha" name="viewModel.ConfirmaSenha" required="" value="@Model.ConfirmaSenha">
+                    </div>
+                    <button type="submit" class="btn btn-primary block full-width m-b">Salvar Nova Senha</button>
+
+                    <div class="clear-list m-t">
+                        @if (Model.Erros.Count() > 0)
+                        {
+                            <div class="alert alert-danger" role="alert">
+                                <span class="sr-only">Erros:</span>
+                                <ul class="list-group">
+                                    @foreach (var error in Model.Erros)
+                                    {
+                                        <li class="list-group-item fist-item">@error.ErrorMessage</li>
+                                    }
+                                </ul>
+                            </div>
+                        }
+                    </div>
+
+                    <a href="@Url.Action("Index")" title="Voltar para login"><small>Voltar para login</small></a>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

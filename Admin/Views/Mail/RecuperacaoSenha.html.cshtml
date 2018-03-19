@@ -1,0 +1,17 @@
+﻿@model EmailEnviadoViewModel
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <h5>@Model.Nome</h5>
+    <p>Link para alteração de senha:</p>
+    <a href="@Url.Action("Index", "RecuperacaoSenha", new {token = Model.Token}, "http")">
+        @(Url.Action("Index", "RecuperacaoSenha", new { token = Model.Token }, "http"))
+    </a>
+</body>
+</html>

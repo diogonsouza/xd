@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<configuration>
+  <configSections>
+    <section name="Common.Configuration.v4.0" type="Common.Configuration.Section, Common.v4.0" />
+    <section name="Common.Minify.Configuration.v4.0" type="Common.Minify.Configuration.ConfigurationSection, Common.Minify.v4.0" />
+  </configSections>  
+  
+  <Common.Minify.Configuration.v4.0 Debug="false">
+    <Cache Enabled="True" />
+  </Common.Minify.Configuration.v4.0>
+  
+  <system.web>
+    <compilation debug="true" targetFramework="4.5.1">
+        <assemblies>
+            <add assembly="Common.v4.0" />
+            <add assembly="Common.Minify.v4.0" />
+            <add assembly="Common.Minify.Mvc.v4.0" />
+            <add assembly="Common.Seo.v4.0" />
+            <add assembly="Common.Sitemap.v4.0" />
+        </assemblies>
+    </compilation>
+    <pages>
+        <namespaces>
+            <add namespace="Common" />
+        </namespaces>
+    </pages>
+  </system.web>
+</configuration>

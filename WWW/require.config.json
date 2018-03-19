@@ -1,0 +1,32 @@
+{
+	"syncModules": [],
+	"structureApp": "main/structure",
+	"appFolder": "main/",
+	"outputFolder": "dist/",
+
+	"baseUrl": "assets/js",
+	"generateSourceMaps": false,
+	"optimize": "none",
+	"paths": {
+		"almond": "<%=paths.rjs.bower%>/almond/almond",
+		"zepto": "<%=paths.rjs.bower%>/zepto/src",
+		"hyojun.guideline": "<%=paths.rjs.bower%>/Hyojun.Guideline/assets/js/dist/guideline"
+	},
+	"map": {
+		"*": {
+			"jquery": "zepto/zepto"
+		}
+	},
+	"shim": {
+		"zepto/deferred": ["zepto/zepto", "zepto/callbacks"],
+		"zepto/form": ["zepto/zepto"],
+		"zepto/ajax": ["zepto/zepto"],
+		"zepto/callbacks": ["zepto/zepto"],
+		"zepto/event": ["zepto/zepto"],
+		"zepto/touch": ["zepto/zepto"],
+		"zepto/ie": ["zepto/zepto"],
+		"zepto/zepto": {
+			"exports": "$"
+		}
+	}
+}

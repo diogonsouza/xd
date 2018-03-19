@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  www:
+    image: www
+    build:
+      context: .\WWW
+      dockerfile: Dockerfile

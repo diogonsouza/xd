@@ -1,0 +1,89 @@
+{
+	"build_systems":
+	[
+		{
+			"cmd": ["grunt", "sass:dev", "sync", "exec:touch", "--no-color"],
+			"name": "SASS update",
+			"selector": "source.sass, source.scss"
+		},
+		{
+			"cmd": ["time", "grunt", "requirejs_partial:$file", "sync", "exec:touch", "--no-color"],
+			"name": "Require update",
+			"selector": "source.js"
+		},
+		{
+			"cmd": ["grunt", "sync", "exec:touch", "--no-color"],
+			"name": "HTML sync",
+			"selector": "source.html, text.html, text.xml"
+		}
+	],
+	"folders":
+	[
+		{
+			"name": "sass",
+			"path": "./WWW/assets/sass/",
+			"folder_exclude_patterns":
+			[
+				".sass-cache"
+			]
+		},{
+			"name": "js",
+			"path": "./WWW/assets/js/",
+			"file_exclude_patterns": [
+				"*.map"
+			],
+			"folder_exclude_patterns":
+			[
+				"dist"
+			]
+		},{
+			"name": "Views",
+			"path": "./WWW/Views/"
+		},{
+			"name": "Helpers",
+			"path": "./WWW/App_Code/"
+		},{
+			"file_exclude_patterns":
+			[
+				"*.sublime-workspace",
+				"*.lock",
+				"*.sln",
+				"*.csproj",
+				"*.bat",
+				"*.woff",
+				"*.svg",
+				"*.ttf",
+				"WWW/_App_Offline.htm"
+			],
+			"folder_exclude_patterns":
+			[
+				"packages",
+				"Business",
+				"Admin",
+				"IoC",
+				"Mapping",
+				"Migration",
+				"Model",
+				"bower_components",
+				"node_modules",
+				"WWW/Controller",
+				"WWW/App_Code",
+				"WWW/App_Start",
+				"WWW/Views",
+				"WWW/Properties",
+				"WWW/WebCommon",
+				"WWW/assets/sass",
+				"WWW/assets/js",
+				"WWW/assets/css",
+				".sass-cache"
+			],
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"draw_white_space": "all",
+		"rulers": [ 120 ],
+		"word_wrap": false
+	}
+}

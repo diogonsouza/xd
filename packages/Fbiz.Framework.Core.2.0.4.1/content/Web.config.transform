@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>  
+<configuration>
+  <configSections>
+    <section name="Fbiz.Framework.Core.Configuration.v2.0" type="Fbiz.Framework.Core.Configuration.ConfigurationSection, Fbiz.Framework.Core.v2.0, Version=2.0.4.1, Culture=neutral, PublicKeyToken=4da387c7938b1245" />
+  </configSections>  
+  
+  <connectionStrings configSource="Config\connectionstring.config" />
+  
+  <Fbiz.Framework.Core.Configuration.v2.0 configSource="Config\framework.config" />
+  
+  <appSettings file="Config\appsettings.config">
+    <add key="ClientValidationEnabled" value="true" />
+    <add key="UnobtrusiveJavaScriptEnabled" value="true" />
+  </appSettings>
+</configuration>

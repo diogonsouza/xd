@@ -1,0 +1,56 @@
+﻿@model RelatorioListagemViewModel
+@{
+    ViewBag.Title = "Ranking";
+}
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-lg-10">
+        <h2>Ranking de Usuários</h2>
+        <ol class="breadcrumb">
+            <li>
+                <a href="@Url.Action("Index", "Home")">Home</a>
+            </li>
+            <li class="active">
+                <strong>Ranking</strong>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-title">
+                    <h5>Usuários</h5>
+                </div>
+                <div class="ibox-content">
+                    <table class="table table-bordered table-striped table-hover">
+                        <tr>
+                            <th>Nome</th>
+                            <th>E-Mail</th>
+                            <th>Data Cadastro</th>
+                            <th>Pontuação</th>
+                            <th>Recrutado</th>
+                        </tr>
+                        @foreach (var item in Model.Itens)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.NomeCliente)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                <td>@Html.DisplayFor(modelItem => item.DataCriacao)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Pontuacao)</td>
+                                <td>@(item.Recrutado ? "Sim" : "Não")</td>
+
+                            </tr>
+                        }
+                    </table>
+                    <div class="ibox-content">
+                        @AdminComponents.Pager(Html, Url, Model.Itens)
+                        @*@Html.ActionLink("Recrutar", "Recrutar", "Relatorio", null, new { @class = "btn btn-w-m btn-info" })*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
